@@ -16,13 +16,13 @@ client.search({index: term, body: queryBuilder()
       class_section = hits[course_id]._source.section
       class_times = hits[course_id]._source.daysAndTimes
       class_room = hits[course_id]._source.room
-      class_instructor = hits[course_id]._source.room
+      class_instructor = hits[course_id]._source.instructor
       class_meeting_dates = hits[course_id]._source.meetingDates
       class_location = hits[course_id]._source.location
 
 
       course_div +=  "<div id = " +  "'" + course_id + "'  >" +
-      
+
         "<table align='center' border='1' cellpadding='5' cellspacing='2'>" +
 
         "<tr>" +
@@ -57,9 +57,9 @@ client.search({index: term, body: queryBuilder()
          "</div>";
 
     }
-    //document.getElementById("#courses_div").innerHTML = total_found + course_div;
+    document.getElementById("courses_div").innerHTML = total_found + course_div;
 
-document.write(total_found + course_div);
+//document.write(total_found + course_div);
 }, function (err) {
     document.write("failure </br>");
     document.write(err.message);

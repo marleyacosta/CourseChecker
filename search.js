@@ -219,17 +219,11 @@ function filters(width) {
 
 function print_results() {
 
-  document.write(
-    '<script src="bundle.js"></script>' +
-    '<link rel="stylesheet" href="CSS/courses.css">' +
-    '<title>FIU Course Checker</title>' +
-    '<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>' +
-    '<meta name="viewport" content="width=device-width, initial-scale=1">' +
-    '<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">' +
-    '<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>' +
-    '<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>'
-
-  );
+  var script = document.createElement('script');
+   script.src = 'bundle.js';
+   script.type = 'text/javascript';
+   var head = document.getElementsByTagName("head")[0];
+   head.appendChild(script);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
