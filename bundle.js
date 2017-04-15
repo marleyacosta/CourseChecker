@@ -12,11 +12,22 @@ client.search({index: term, body: queryBuilder()
     var course_div = '';
     for (course_id in hits) {
 
-      course_div +=  "<div id = " +  "'" + course_id + "' >" +
+      course_name = hits[course_id]._source.courseInfo
+      class_number = hits[course_id]._source.classNum
+      class_section = hits[course_id]._source.section
+      class_times = hits[course_id]._source.daysAndTimes
+      class_room = hits[course_id]._source.room
+      class_instructor = hits[course_id]._source.room
+      class_meeting_dates = hits[course_id]._source.meetingDates
+      class_location = hits[course_id]._source.location
+
+
+      course_div +=  "<div id = " +  "'" + course_id + "'  >" +
+      
         "<table align='center' border='1' cellpadding='5' cellspacing='2'>" +
 
         "<tr>" +
-            "<th colspan='9'>" + hits[course_id]._source.courseInfo + "</th>" +
+            "<th colspan='9'>" + course_name + "</th>" +
         "</tr>" +
 
         "<tr>" +
@@ -31,13 +42,13 @@ client.search({index: term, body: queryBuilder()
 
         "<tr>" +
 
-        "<td>" + hits[course_id]._source.classNum + "</td>" +
-        "<td>" + hits[course_id]._source.section + "</td>" +
-        "<td>" + hits[course_id]._source.daysAndTimes + "</td>" +
-        "<td>" + hits[course_id]._source.room + "</td>" +
-        "<td>" + hits[course_id]._source.instructor + "</td>" +
-        "<td>" + hits[course_id]._source.meetingDates + "</td>" +
-        "<td>" + hits[course_id]._source.location + "</td>" +
+        "<td>" + class_number + "</td>" +
+        "<td>" + class_section + "</td>" +
+        "<td>" + class_times + "</td>" +
+        "<td>" + class_room + "</td>" +
+        "<td>" + class_instructor + "</td>" +
+        "<td>" + class_meeting_dates + "</td>" +
+        "<td>" + class_location + "</td>" +
 
 
         "</tr>" +
