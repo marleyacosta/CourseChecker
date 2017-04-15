@@ -1,0 +1,24 @@
+
+
+  table {
+      text-align: center;
+      width: 80%;
+  }
+
+  .course_description th {
+      background: #7382B5;
+      color: white;
+  }
+
+  th {
+      background: #DAE2EE;
+      font-weight: bold;
+      padding: .5% 1% 0.5% 1%;
+      text-align: center;
+      color: #15325C;
+  }
+
+  td {
+      background: #f9f9f9;
+      padding: 1%;
+  }
