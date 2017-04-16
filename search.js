@@ -86,7 +86,7 @@ function build_course_list(course, course_credits, color, id, list) {
   // Check if student has exceeded maximum allowable semester credits
   var tmpCredits = total_credits + course_credits;
   if (tmpCredits > 18 && indexOfCourse == -1) {
-    window.alert("Exceeded max credits: " + tmpCredits);
+    window.alert("Exceeded maximum credits: " + tmpCredits);
     return true;
   }
   if (indexOfCourse !== -1) {
@@ -127,7 +127,7 @@ function check_block(blk, course, course_credits, id, color) {
     else if (course != b1[0] && course != b2[0]) {
       var tmpCredits = total_credits - b1[1] + course_credits;
       if (tmpCredits > 18) {
-        window.alert("Exceeded max credits: " + tmpCredits);
+        window.alert("Exceeded maximum credits: " + tmpCredits);
         return;
       }
       // remove the currently selected course and then add the new one
@@ -157,7 +157,7 @@ function check_block(blk, course, course_credits, id, color) {
     else if (course != b2[0] && course != b1[0]) {
       var tmpCredits = total_credits - b2[1] + course_credits;
       if (tmpCredits > 18) {
-        window.alert("Exceeded max credits: " + tmpCredits);
+        window.alert("Exceeded maximum credits: " + tmpCredits);
         return;
       }
       // remove the currently selected course and then add the new one

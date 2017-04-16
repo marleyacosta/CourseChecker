@@ -50,7 +50,7 @@ client.search({
                   "<table align='center' border='1' cellpadding='5' cellspacing='2'>" +
 
                   "<tr>" +
-                  "<th colspan='9'>" + course_name + "</th>" +
+                  "<th class = 'course_name_th' colspan='9'>" + course_name + "</th>" +
                   "</tr>" +
 
                   "<tr>" +
@@ -84,7 +84,7 @@ client.search({
               "<table align='center' border='1' cellpadding='5' cellspacing='2'>" +
 
               "<tr>" +
-              "<th colspan='9'>" + course_name + "</th>" +
+              "<th class = 'course_name_th' colspan='9'>" + course_name + "</th>" +
               "</tr>" +
 
               "<tr>" +
