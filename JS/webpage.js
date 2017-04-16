@@ -13,15 +13,6 @@ $(document).ready(function(e) {
     });
 });
 
-// This function shows the buffering when loading the homepage
-document.onreadystatechange = function() {
-    var state = document.readyState
-    if (state == 'complete') {
-        document.getElementById('interactive');
-        document.getElementById('load').style.visibility = "hidden";
-    }
-}
-
 ///////////////////////////////////////////////////////////////
 // Logic for displaying the courses on the web page
 ///////////////////////////////////////////////////////////////

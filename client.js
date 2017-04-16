@@ -38,14 +38,9 @@ client.search({
                     "<td>" + class_meeting_dates + "</td>" +
                     "<td>" + class_location + "</td>" +
 
-
                     "</tr>" ;
-
-
-
             }
             else{
-
 
               course_div += "</table>" + "</div>";
 
@@ -76,7 +71,6 @@ client.search({
                   "<td>" + class_instructor + "</td>" +
                   "<td>" + class_meeting_dates + "</td>" +
                   "<td>" + class_location + "</td>" +
-
 
                   "</tr>";
 
@@ -113,13 +107,9 @@ client.search({
               "<td>" + class_location + "</td>" +
 
               "</tr>";
-
-
         }
     }
-    document.getElementById("courses_div").innerHTML = total_found + course_div;
-
-    //document.write(total_found + course_div);
+    document.getElementById("courses_div").innerHTML = total_found + course_div ;
 }, function(err) {
     document.write("failure </br>");
     document.write(err.message);

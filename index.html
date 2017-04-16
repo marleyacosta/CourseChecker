@@ -3,10 +3,21 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-
-    <title>FIU Course Checker</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="bower_components\elasticsearch\elasticsearch.js"></script>
+    <script src="search.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <link rel="shortcut icon" href="images/fiu-browser-tab-icon.png" />
+    <title>CourseChecker</title>
 
 
 
@@ -15,7 +26,24 @@
 
 <body>
 
-
+  <div id="home_div">
+              <div id="logo_div">
+                 <center>
+                    <img id="fiu-logo" src="images/fiu-homepage-logo.png">
+                    <h5 id="learn_more">Search computer science courses at FIU. <a href="about.html" target="_blank">Learn More.</a></h5>
+                    <br>
+                    <div id="college_major_div">
+                       <select id="college_major" class="selectpicker">
+                          <option value = "CS" selected = "selected" >Computer Science</option>
+                          <option value = "IT" >Information Technology</option>
+                       </select>
+                    </div>
+                 </center>
+                 <a id="arrow_button" class="onboarding-ed__arrow js-onboarding-ed-arrow">
+                 <img src="images/arrow.svg">
+                 </a>
+              </div>
+           </div>
 
     <div class="container-fluid" id="cs_flow">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 910" version="1.1">
@@ -583,7 +611,7 @@
     <div id="results_div" class="container-fluid">
         <center><a href="homepage.html#flowchart_div" class="fiu_button" id='back_to_search'>Back to search</a></center>
         <div id="courses_div" class="container-fluid">
-          
+
         </div>
     </div>
 
@@ -594,15 +622,10 @@
         /* CSS for sidenav (filters) */
 
         @import "CSS/sidenav.css";
-        /*@import "CSS/courseButtons.css";*/
+        @import "CSS/courseButtons.css";
 
         @import "CSS/courses.css";
     </style>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="bower_components\elasticsearch\elasticsearch.js"></script>
-    <script src="search.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </html>
