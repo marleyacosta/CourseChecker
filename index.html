@@ -1,12 +1,24 @@
 <!DOCType HTML>
 <html>
-<head><title>FIU Course Checker</title></head>
+
+<head>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+    <title>FIU Course Checker</title>
+
+
+
+
+</head>
+
 <body>
 
 
 
-<div class = "container-fluid" id="cs_flow">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 910" version="1.1">
+    <div class="container-fluid" id="cs_flow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 910" version="1.1">
       <defs>
         <filter id="f2" x="0" y="0" width="200%" height="200%">
           <feOffset result="offOut" in="SourceGraphic" dx="0" dy="2"/>
@@ -524,63 +536,73 @@
       </g>
   </svg>
 
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="icon-bar">
-    <a class="active" href="#" data-home="Home"><i class="fa fa-home"></i></a>
-    <a href="#" data-clear="Clear"><i class="fa fa-refresh"></i></a>
-    <a href="#" data-filters="Filter"><i class="fa fa-bars"></i></a>
-    <a href="#" data-search="Search"><i class="fa fa-search"></i></a>
-  </div>
+        <div class="icon-bar">
+            <a class="active" href="#" data-home="Home"><i class="fa fa-home"></i></a>
+            <a href="#" data-clear="Clear"><i class="fa fa-refresh"></i></a>
+            <a href="#" data-filters="Filter"><i class="fa fa-bars"></i></a>
+            <a href="#" data-search="Search"><i class="fa fa-search"></i></a>
+        </div>
 
-  <div id="mySidenav" class="sidenav">
-    <div class="cd-filter-block">
-      <h4><a href="#">Days</a></h4>
-      <ul class="cd-filter-content cd-filters list">
-        <li>
-          <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-          <label class="checkbox-label" for="checkbox1">Option 1</label>
-        </li>
-        <li>
-          <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-          <label class="checkbox-label" for="checkbox2">Option 2</label>
-        </li>
-        <li>
-          <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-          <label class="checkbox-label" for="checkbox3">Option 3</label>
-        </li>
-      </ul> <!-- cd-filter-content -->
-    </div> <!-- cd-filter-block -->
-    <a href="#">Times</a>         <!-- check boxes -->
-    <a href="#">Location</a>      <!-- select -->
-    <a href="#">Session</a>       <!-- select -->
-    <a href="#">Instructor</a>    <!-- typed -->
-  </div>
-
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="bower_components\elasticsearch\elasticsearch.js"></script>
-  <script src="search.js"></script>
-
-
-
-</div>
+        <div id="mySidenav" class="sidenav">
+            <div class="cd-filter-block">
+                <h4><a href="#">Days</a></h4>
+                <ul class="cd-filter-content cd-filters list">
+                    <li>
+                        <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                        <label class="checkbox-label" for="checkbox1">Option 1</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                        <label class="checkbox-label" for="checkbox2">Option 2</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">Option 3</label>
+                    </li>
+                </ul>
+                <!-- cd-filter-content -->
+            </div>
+            <!-- cd-filter-block -->
+            <a href="#">Times</a>
+            <!-- check boxes -->
+            <a href="#">Location</a>
+            <!-- select -->
+            <a href="#">Session</a>
+            <!-- select -->
+            <a href="#">Instructor</a>
+            <!-- typed -->
+        </div>
 
 
-  <div id="results_div" class="container-fluid">
-      <center><a href="homepage.html#flowchart_div" class="fiu_button" id='back_to_search'>Back to search</a></center>
-      <div id="courses_div" class="container-fluid">
+    </div>
 
-      </div>
-  </div>
 
-<style>
-  /* CSS for icon-bar */
-  @import "CSS/iconBar.css";
-  /* CSS for sidenav (filters) */
-  @import "CSS/sidenav.css";
-  /*@import "CSS/courseButtons.css";*/
-  @import "CSS/courses.css";
+    <div id="results_div" class="container-fluid">
+        <center><a href="homepage.html#flowchart_div" class="fiu_button" id='back_to_search'>Back to search</a></center>
+        <div id="courses_div" class="container-fluid">
+          
+        </div>
+    </div>
 
-</style>
+    <style>
+        /* CSS for icon-bar */
+
+        @import "CSS/iconBar.css";
+        /* CSS for sidenav (filters) */
+
+        @import "CSS/sidenav.css";
+        /*@import "CSS/courseButtons.css";*/
+
+        @import "CSS/courses.css";
+    </style>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="bower_components\elasticsearch\elasticsearch.js"></script>
+    <script src="search.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 </html>

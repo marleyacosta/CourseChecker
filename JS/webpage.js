@@ -112,21 +112,3 @@ $('#campus_locations').selectpicker().change(function(){toggleSelectAll($(this))
 $('#days_of_the_week').selectpicker().change(function(){toggleSelectAll($(this));}).trigger('change');
 
 $('#times_of_day').selectpicker().change(function(){toggleSelectAll($(this));}).trigger('change');
-
-
-///////////////////////////////////////////////////////////////
-// This function selects up to 6 courses in the flowchart
-///////////////////////////////////////////////////////////////
-
-var counter = 0;
-
-// if a square and some counter is less than 6 squares selected is clicked on, then add the selected class.
-
-if(){
-  counter++;
-}
-
-// if clicked again while having selected class, remove the selected class
-if(){
-  counter--;
-}

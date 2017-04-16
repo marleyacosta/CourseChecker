@@ -222,8 +222,7 @@ function print_results() {
   var script = document.createElement('script');
    script.src = 'bundle.js';
    script.type = 'text/javascript';
-   var head = document.getElementsByTagName("head")[0];
-   head.appendChild(script);
+   document.head.appendChild(script);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
