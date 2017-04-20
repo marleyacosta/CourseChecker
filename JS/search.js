@@ -266,7 +266,7 @@ function menu(element) {
   }, 500);
   if (element.offsetWidth == "0") {
     element.style.visibility = "visible";
-    element.style.width = "290px";
+    element.style.width = "300px";
   }
   else {
     element.style.width = "0";
