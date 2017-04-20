@@ -1,23 +1,14 @@
-var term = "summer";
 var course_list = [];
 var campus = null;
 var instructor = null;
 var days = [];
+var not_days = [];
 var times = [];
 var section = null;
 var total_credits = 0;
 var b1 = [];
 var b2 = [];
 var b3 = [];
-
-//close filter dropdown inside lateral .cd-filter
-$('.cd-filter-block h4').on('click', function(){
-  $(this).toggleClass('closed').siblings('.cd-filter-content').slideToggle(300);
-})
-
-
-
-
 
 
 $('[data-cid]').click(function() {
@@ -62,53 +53,97 @@ $('[data-block]').click(function() {
   check_block(blk, course, course_credits, id, color);
 });
 
-$('[data-home]').click(function() {
-  go_home();
-});
-
 $('[data-clear]').click(function() {
   clear();
 });
 
-$('[data-filters]').click(function() {
-  var width = document.getElementById("mySidenav").offsetWidth;
-  filters(width);
+$('[data-menu]').click(function() {
+  var element = document.getElementById("sideMenu");
+  menu(element);
+});
+
+$("[data-flow]").click(function() {
+  $('html, body').animate({
+    scrollTop: $("#cs_flow").offset().top
+  }, 500);
+});
+
+$('[data-collapse]').click(function(){
+  $(this).siblings('.filter-content').slideToggle(300);
+})
+
+$('[data-day]').click(function() {
+  var day = $(this).data('day');
+  build_filter_list(day, days);
+});
+
+$('[data-time]').click(function() {
+  var time = $(this).data('time');
+  build_filter_list(time, times);
 });
 
 $('[data-search]').click(function() {
+  term = $('#semester').find(":selected").val();
+  campus = $('#location').find(":selected").text();
+  if (campus == "Select a location")
+    campus = null;
+  section = $('#session').find(":selected").text();
+  if (section == "Select a session")
+    section = null;
   print_results();
 });
 
 function build_course_list(course, course_credits, color, id, list) {
+  var co = course.split(", ")[0];
   // If course is already there in array, it's index will be returned,
   // otherwise inArray() will return -1
-  var indexOfCourse = $.inArray(course, course_list);
+  var indexOfCourse = $.inArray(co, course_list);
   // Check if student has exceeded maximum allowable semester credits
   var tmpCredits = total_credits + course_credits;
   if (tmpCredits > 18 && indexOfCourse == -1) {
-    window.alert("Exceeded maximum credits: " + tmpCredits);
+    window.alert("ERROR: Exceeded max credits: " + tmpCredits);
     return true;
   }
-  if (indexOfCourse !== -1) {
-    course_list.splice(indexOfCourse, 1);
-    list.splice(0, 3);
-    total_credits = total_credits - course_credits;
+  if (course.length != 8) {
+    course_and_lab(co, indexOfCourse, course, course_credits, id, list);
   }
   else {
-    course_list.push(course);
-    list.push(course, course_credits, id);
-    total_credits = total_credits + course_credits;
+    if (indexOfCourse !== -1) {
+      course_list.splice(indexOfCourse, 1);
+      list.splice(0, 3);
+      total_credits = total_credits - course_credits;
+    }
+    else {
+      course_list.push(course);
+      list.push(course, course_credits, id);
+      total_credits = total_credits + course_credits;
+    }
   }
   change_color(color, id);
   console.log(course_list);
   console.log(total_credits);
 }
 
+function course_and_lab(co, indexOfCourse, course, course_credits, id, list) {
+  var lab = course.split(", ")[1];
+  if (indexOfCourse !== -1) {
+    course_list.splice(indexOfCourse, 2);
+    list.splice(0, 3);
+    total_credits = total_credits - course_credits;
+  }
+  else {
+    course_list.push(co);
+    course_list.push(lab);
+    list.push(course, course_credits, id);
+    total_credits = total_credits + course_credits;
+  }
+}
+
 function change_color(color, id) {
   if (color == "rgb(255, 255, 255)")
-    $('#'+id).css({ fill: "lightgrey" });
+    $('#'+id).css({fill: "lightgrey"});
   else
-    $('#'+id).css({ fill: "white" });
+    $('#'+id).css({fill: "white"});
 }
 
 function drop_menu(element) {
@@ -127,7 +162,7 @@ function check_block(blk, course, course_credits, id, color) {
     else if (course != b1[0] && course != b2[0]) {
       var tmpCredits = total_credits - b1[1] + course_credits;
       if (tmpCredits > 18) {
-        window.alert("Exceeded maximum credits: " + tmpCredits);
+        window.alert("ERROR: Exceeded max credits: " + tmpCredits);
         return;
       }
       // remove the currently selected course and then add the new one
@@ -135,7 +170,7 @@ function check_block(blk, course, course_credits, id, color) {
       build_course_list(course, course_credits, color, id, b1);
     }
     else {
-      window.alert("This course was already selected!");
+      window.alert("ERROR: This course was already selected!");
       return;
     }
 
@@ -157,7 +192,7 @@ function check_block(blk, course, course_credits, id, color) {
     else if (course != b2[0] && course != b1[0]) {
       var tmpCredits = total_credits - b2[1] + course_credits;
       if (tmpCredits > 18) {
-        window.alert("Exceeded maximum credits: " + tmpCredits);
+        window.alert("ERROR: Exceeded max credits: " + tmpCredits);
         return;
       }
       // remove the currently selected course and then add the new one
@@ -165,7 +200,7 @@ function check_block(blk, course, course_credits, id, color) {
       build_course_list(course, course_credits, color, id, b2);
     }
     else {
-      window.alert("This course was already selected!");
+      window.alert("ERROR: This course was already selected!");
       return;
     }
 
@@ -202,27 +237,98 @@ function check_block(blk, course, course_credits, id, color) {
   }
 }
 
-function go_home() {
-  document.write('');
-}
-
 function clear() {
-  document.write('');
+  $('html, body').animate({
+    scrollTop: $("#cs_flow").offset().top
+  }, 500);
+  course_list = [];
+  campus = null;
+  document.getElementById("location").value = "0";
+  instructor = document.getElementById("instructor").value = "";
+  days = [];
+  times = [];
+  section = null;
+  document.getElementById("session").value = "0";
+  total_credits = 0;
+  b1 = [];
+  b2 = [];
+  b3 = [];
+  $(".button").css({fill: "white"});
+  $(".b1").css({fill: "white"});
+  $(".b2").css({fill: "white"});
+  $(".b3").css({fill: "white"});
+  $("input:checkbox").removeAttr("checked");
 }
 
-function filters(width) {
-  if (width == "0")
-    document.getElementById("mySidenav").style.width = "250px";
+function menu(element) {
+  $('html, body').animate({
+    scrollTop: $("#cs_flow").offset().top
+  }, 500);
+  if (element.offsetWidth == "0") {
+    element.style.visibility = "visible";
+    element.style.width = "290px";
+  }
+  else {
+    element.style.width = "0";
+    element.style.visibility = "hidden";
+  }
+}
+
+function build_filter_list(item, list) {
+  var indexOfItem = $.inArray(item, list);
+  if (indexOfItem !== -1)
+    list.splice(indexOfItem, 1);
   else
-    document.getElementById("mySidenav").style.width = "0";
+    list.push(item);
+}
+
+function get_not_days() {
+  not_days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+  var num = days.length;
+  var i = 0;
+  while (i < num) {
+    var indexOfDay = $.inArray(days[i], not_days);
+    if (indexOfDay !== -1)
+      not_days.splice(indexOfDay, 1);
+    i = i + 1;
+  }
+  if (not_days.length == 0)
+    not_days = [""];
+  if (not_days.length == 7)
+    not_days = [];
 }
 
 function print_results() {
+  if (term == "0") {
+    window.alert("ERROR: Must select a semester!");
+    $('html, body').animate({
+      scrollTop: $("#home_div").offset().top
+    }, 1500);
+    return;
+  }
+  get_not_days();
 
+  instructor = document.getElementById("instructor").value;
+  if (instructor == "")
+    instructor = null;
+
+  if (course_list.length == 0 && campus == null && instructor == null && days.length == 0 && times.length == 0 && section == null) {
+    window.alert("ERROR: Need input to search!");
+    $('html, body').animate({
+      scrollTop: $("#cs_flow").offset().top
+    }, 500);
+    return;
+  }
+  $('html, body').animate({
+    scrollTop: $("#results_div").offset().top
+  }, 1500);
+  // clear the div
+  document.getElementById("courses_div").innerHTML = "";
+  // populate div
   var script = document.createElement('script');
-   script.src = 'bundle.js';
-   script.type = 'text/javascript';
-   document.head.appendChild(script);
+  script.src = 'JS/bundle.js';
+  script.type = 'text/javascript';
+  document.head.appendChild(script);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -297,13 +403,13 @@ function must_not() {
   var str_not = null;
   var i = 0;
 
-  if (days.length != 0) {
+  if (not_days.length != 0) {
     str_not = '"must_not": [';
 
-    while (i < days.length) {
-      str_not = str_not + '{"match_phrase": {"days": "' + days[i] + '"}}';
+    while (i < not_days.length) {
+      str_not = str_not + '{"match_phrase": {"days": "' + not_days[i] + '"}}';
       i = i + 1;
-      if ((days.length - i) != 0)
+      if ((not_days.length - i) != 0)
         str_not = str_not + ', ';
     }
 

@@ -1,0 +1,32 @@
+#results_div{
+  background: #F7F7F7;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+table {
+  text-align: center;
+  width: 80%;
+  margin-top: : 2%;
+  margin-bottom: 2%;
+}
+
+.course_name_th {
+  color:white;
+  background: #7382b5;
+  border-color: #7382b5;
+}
+
+th {
+  background: #DAE2EE;
+  font-weight: bold;
+  padding: .5% 1% 0.5% 1%;
+  text-align: center;
+  color: #4a598c;
+  border-color: #7b97c0;
+}
+
+td {
+  background:white;
+  padding: 1%;
+}

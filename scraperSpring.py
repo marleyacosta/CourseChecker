@@ -149,6 +149,10 @@ class TestFIUSearchPage():
 		if(len(self.driver.find_elements_by_id('DERIVED_CLSMSG_ERROR_TEXT')) > 0):
 			return True
 
+	def checkOverflow(self):
+		if(len(self.driver.find_elements_by_id('win0divDERIVED_SSE_DSP_SSR_MSG_TEXT')) > 0):
+			return True
+
 	def clearAndSearch(self, num, pre):
 		self.clearSearch()
 		sleep(1.5)
@@ -194,11 +198,13 @@ class TestFIUSearchPage():
 		#into a newly created index
 		while(i < len(courseNumList)):
 			self.clearAndSearch(courseNumList[i], coursePrefixList[i])
-			course_state[i][0] = coursePrefixList[i] + " " + courseNumList[i]
+			course_state[i][0] = coursePrefixList[i] + "_" + courseNumList[i]
 
 			if(self.checkSearch() == True):
 				i = i + 1
 				continue
+			if(self.checkOverflow() == True):
+				self.driver.find_element_by_xpath('//*[@id="#ICSave"]').click()
 			#Added index information as parameter to build dict objects
 			self.scrapeAndModifySearch(courses, INDEX_NAME, TYPE_NAME)
 			course_state[i][1] = "1"

@@ -1,0 +1,80 @@
+// Default styling here
+
+// Little larger screen
+@media only screen and (min-width: 480px) {
+
+}
+
+// Pads and larger phones
+@media only screen and (min-width: 600px) {
+
+}
+
+// Larger pads
+@media only screen and (min-width: 768px) {
+
+}
+
+// Horizontal pads and laptops
+@media only screen and (min-width: 992px) {
+
+}
+
+// Really large screens
+@media only screen and (min-width: 1382px) {
+
+}
+
+// 2X size (iPhone 4 etc)
+@media only screen and
+        (-webkit-min-device-pixel-ratio: 1.5), only screen and
+        (-o-min-device-pixel-ratio: 3/2), only screen and
+        (min-device-pixel-ratio: 1.5) {
+
+}
+
+
+#home_div {
+  background: #F7F7F7;
+  width: 100%;
+  height: 100vh;
+}
+
+#logo_div {
+  position: relative;
+  top: 35%;
+  transform: perspective(0.125%) translateY(-35%);
+}
+
+.onboarding-ed__arrow {
+  position: absolute;
+  height: 46px;
+  width: 46px;
+  bottom: 0;
+  left: 50%;
+  top: 170%;
+  margin: 0 0 50px -28px;
+  background: rgba(34,34,34,0.35);
+  z-index: 10;
+  cursor: pointer;
+  background-size: 24px;
+  border-radius: 100%;
+  -webkit-transition: all .15s ease-out;
+  -moz-transition: all .15s ease-out;
+  transition: all .15s ease-out;
+}
+
+.onboarding-ed__arrow:hover {
+  height: 56px;
+  width: 56px;
+  background: #D49700;
+}
+
+.onboarding-ed__arrow img {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -25%;
+}

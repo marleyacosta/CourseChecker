@@ -1,0 +1,142 @@
+#cs_flow {
+  position: relative;
+  width: 100%;
+  height:100vh;
+  margin: 3% 0 3% 0;
+}
+
+#cs_flow svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#drop1, #drop2, #drop3, #MAC2311, #COP2210, #CGS1920, #ENC3249, #MAC2312, #PHY2048, #CDA3103,
+#COP3337, #CGS3095, #PHY2049, #CDA4101, #COT3541, #COP3530, #STA3033, #MAD3512, #COP4338, #COP4710,
+#COP4555, #COP4610, #CNT4713, #CEN4010, #CIS4911, #CAP4453, #CAP4710, #CAP4770, #CAP4641, #CDA4625,
+#CEN4021, #CEN4072, #CEN4083, #COP4226, #COP4520, #COP4534, #COP4604, #COP4722, #COT4521, #MAD3305,
+#MAD3401, #MAD4203, #MHF4302 {
+  -webkit-transition-duration: 0.25s; /* Safari */
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+#CHM1045, #CHM1046, #BSC1010, #BSC1011, #GLY1010, #CHM1045-2, #CHM1046-2, #BSC1010-2, #BSC1011-2,
+#GLY1010-2, #COT3993, #MAD2104 {
+  cursor: pointer;
+}
+
+#drop1:active, #drop2:active, #drop3:active, #MAC2311:active, #COP2210:active, #CGS1920:active,
+#ENC3249:active, #MAC2312:active, #PHY2048:active, #GLY1010:active, #CDA3103:active, #COP3337:active,
+#CGS3095:active, #PHY2049:active, #CDA4101:active, #COT3541:active, #COP3530:active, #STA3033:active,
+#CHM1045:active, #CHM1046:active, #MAD3512:active, #COP4338:active, #COP4710:active, #COP4555:active,
+#COP4610:active, #CNT4713:active, #CEN4010:active, #CIS4911:active, #BSC1010:active, #BSC1011:active,
+#CAP4453:active, #CAP4710:active, #CAP4770:active, #CAP4641:active, #CDA4625:active, #CEN4021:active,
+#CEN4072:active, #CEN4083:active, #COT3993:active, #MAD2104:active, #COP4226:active, #COP4520:active,
+#COP4534:active, #COP4604:active, #COP4722:active, #COT4521:active, #MAD3305:active, #MAD3401:active,
+#MAD4203:active, #MHF4302:active, #CHM1045-2:active, #CHM1046-2:active, #BSC1010-2:active,
+#BSC1011-2:active, #GLY1010-2:active {
+  transform: translateY(3px);
+}
+
+#svgText {
+  pointer-events: none;
+}
+
+/*-------------------------------------------------------------*/
+/*------------------------- Icon Bar -------------------------*/
+/*-------------------------------------------------------------*/
+.icon-bar {
+  background-color: #15325C;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 5%;
+}
+
+.icon-bar a {
+  display: block; /* Make the links appear below each other instead of side-by-side */
+  text-align: center; /* Center-align text */
+  padding: 10px; /* Add some padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 36px; /* Increased font-size */
+}
+
+.gold {
+  background-color: #c5960c;
+}
+
+.gold:hover {
+  background-color: white;
+  color: #c5960c;
+}
+
+.blue:hover {
+  background-color: white;
+  color: #15325C;
+}
+
+/*-------------------------------------------------------------*/
+/*------------------------- Side Menu -------------------------*/
+/*-------------------------------------------------------------*/
+/* The side navigation menu */
+.sideMenu {
+  height: 90%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute;
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #15325C;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 3%;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sideMenu */
+}
+
+/* The navigation menu links */
+.sideMenu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 80%;
+  color: #C5960C;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sideMenu a:hover, .offcanvas a:focus{
+  color: white;
+  cursor: pointer;
+}
+
+/* Position and style the close button (top right corner) */
+.sideMenu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 40px;
+  margin-left: 50px;
+}
+
+.sideMenu ul {
+  list-style: none;
+  font-size: 130%;
+  color: white;
+  white-space: nowrap;
+}
+
+.sideMenu input {
+  font-size: 18px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sideMenu (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sideMenu {padding-top: 15px;}
+  .sideMenu a {font-size: 18px;}
+}

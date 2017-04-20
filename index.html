@@ -1,50 +1,52 @@
 <!DOCType HTML>
 <html>
-
 <head>
-
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/index.css">
-
-    <link rel="shortcut icon" href="images/fiu-browser-tab-icon.png" />
-    <title>CourseChecker</title>
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+  <link rel="shortcut icon" href="images/fiu-browser-tab-icon.png"/>
+  <link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="CSS/results.css">
+  <link rel="stylesheet" href="CSS/csFlow.css">
+  <title>Course Checker</title>
 </head>
-
 <body>
 
-  <div id="home_div">
-              <div id="logo_div">
-                 <center>
-                    <img id="fiu-logo" src="images/fiu-logo.svg">
-                    <h5 id="learn_more">Search computer science courses at FIU. <a href="about.html" target="_blank">Learn More.</a></h5>
-                    <br>
-                    <div id="college_major_div">
-                       <select id="college_major" class="selectpicker">
-                          <option value = "CS" selected = "selected" >Computer Science</option>
-                          <option value = "IT" >Information Technology</option>
-                       </select>
-                    </div>
-                 </center>
-                 <a id="arrow_button" class="onboarding-ed__arrow js-onboarding-ed-arrow">
-                 <img src="images/arrow.svg">
-                 </a>
-              </div>
-           </div>
+<div id="home_div">
+  <div id="logo_div">
+    <center>
+      <img id="fiu-logo" src="images/fiu-logo.svg">
+      <br><br>
+      <div id="semester_major_div">
+        <select id="semester" class="selectpicker">
+          <option value="0">Select a semester</option>
+          <option value="fall">Fall</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+        </select>
+        <select id="college_major" class="selectpicker">
+          <option value="0">Select a major</option>
+          <option value="CS">Computer Science</option>
+        </select>
+      </div>
+    </center>
+    <a id="home_arrow" class="onboarding-ed__arrow">
+      <img src="images/arrow.svg">
+    </a>
+  </div>
+</div>
 
-    <div class="container-fluid" id="cs_flow">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 910" version="1.1">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="JS/home.js"></script>
+
+<div id="cs_flow" class="container-fluid" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 910" version="1.1">
       <defs>
         <filter id="f2" x="0" y="0" width="200%" height="200%">
           <feOffset result="offOut" in="SourceGraphic" dx="0" dy="2"/>
@@ -124,30 +126,39 @@
         </g>
         <!--*********************** Core/Pre requisite Courses ***********************-->
         <!--MAC2311-->
-          <rect id="MAC2311" data-cid="MAC 2311" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="5" rx="3"/>
+          <rect id="MAC2311" class="button" data-cid="MAC 2311" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="60" y="33" font-size="16" font-weight="bold">MAC 2311</tspan>
             <tspan x="60" y="52" font-style="italic">Calculus I</tspan>
             <tspan x="60" y="83" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="MAC_2311" class="pulse">
+            <circle cx="110" cy="14" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 2210-->
-          <rect id="COP2210" data-cid="COP 2210" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="5" rx="3"/>
+          <rect id="COP2210" class="button" data-cid="COP 2210" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="445" y="33" font-size="16" font-weight="bold">COP 2210</tspan>
             <tspan x="445" y="52" font-style="italic">Programming I</tspan>
             <tspan x="445" y="67" font-style="italic">and Lab</tspan>
             <tspan x="445" y="83" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="COP_2210" class="pulse">
+            <circle cx="495" cy="14" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CGS 1920-->
-          <rect id="CGS1920" data-cid="CGS 1920" value=1 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="685" y="5" rx="3"/>
+          <rect id="CGS1920" class="button" data-cid="CGS 1920" value=1 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="685" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="745" y="33" font-size="16" font-weight="bold">CGS 1920</tspan>
             <tspan x="745" y="52" font-style="italic">Introduction</tspan>
             <tspan x="745" y="67" font-style="italic">to Computing</tspan>
             <tspan x="745" y="83" font-size="12">(1 credit)</tspan>
           </text>
+          <g id="CGS_1920" class="pulse">
+            <circle cx="795" cy="14" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--ENC 3249-->
-          <rect id="ENC3249" data-cid="ENC 3249" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="5" rx="3"/>
+          <rect id="ENC3249" class="button" data-cid="ENC 3249" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="865" y="27" font-size="16" font-weight="bold">ENC 3249</tspan>
             <tspan x="865" y="41" font-style="italic" font-size="14">Professional &</tspan>
@@ -155,15 +166,21 @@
             <tspan x="865" y="71" font-style="italic" font-size="14">Writing for</tspan>
             <tspan x="865" y="85" font-style="italic" font-size="14">Computing</tspan>
           </text>
+          <g id="ENC_3249" class="pulse">
+            <circle cx="915" cy="14" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MAC 2312-->
-          <rect id="MAC2312" data-cid="MAC 2312" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="130" rx="2"/>
+          <rect id="MAC2312" class="button" data-cid="MAC 2312" value=4 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="130" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="60" y="159" font-size="16" font-weight="bold">MAC 2312</tspan>
             <tspan x="60" y="178" font-style="italic">Calculus II</tspan>
             <tspan x="60" y="209" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="MAC_2312" class="pulse">
+            <circle cx="110" cy="139" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--PHY2048/2048L-->
-          <rect id="PHY2048" data-cid="PHY 2048, PHY 2048L" value=5 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="130" rx="2"/>
+          <rect id="PHY2048" class="button" data-cid="PHY 2048, PHY 2048L" value=5 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="130" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="151" font-size="16" font-weight="bold">PHY2048/</tspan>
             <tspan x="180" y="167" font-size="16" font-weight="bold">2048L</tspan>
@@ -171,30 +188,42 @@
             <tspan x="180" y="197" font-style="italic">w/Calculus</tspan>
             <tspan x="180" y="212" font-size="12">(5 credits)</tspan>
           </text>
+          <g id="PHY_2048" class="pulse">
+            <circle cx="230" cy="139" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CDA 3103-->
-          <rect id="CDA3103" data-cid="CDA 3103" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="130" rx="2"/>
+          <rect id="CDA3103" class="button" data-cid="CDA 3103" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="130" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="326" y="159" font-size="16" font-weight="bold">CDA 3103</tspan>
             <tspan x="326" y="173" font-style="italic">Fundamentals</tspan>
             <tspan x="326" y="188" font-style="italic">of Computer</tspan>
             <tspan x="326" y="203" font-style="italic">Systems</tspan>
           </text>
+          <g id="CDA_3103" class="pulse">
+            <circle cx="376" cy="139" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 3337-->
-          <rect id="COP3337" data-cid="COP 3337" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="130" rx="2"/>
+          <rect id="COP3337" class="button" data-cid="COP 3337" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="130" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="445" y="159" font-size="16" font-weight="bold">COP 3337</tspan>
             <tspan x="445" y="173" font-style="italic">Programming II</tspan>
           </text>
+          <g id="COP_3337" class="pulse">
+            <circle cx="495" cy="139" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CGS 3095-->
-          <rect id="CGS3095" data-cid="CGS 3095" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="130" rx="2"/>
+          <rect id="CGS3095" class="button" data-cid="CGS 3095" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="130" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="865" y="159" font-size="16" font-weight="bold">CGS 3095</tspan>
             <tspan x="865" y="173" font-style="italic">Technology in</tspan>
             <tspan x="865" y="189" font-style="italic">the Global</tspan>
             <tspan x="865" y="203" font-style="italic">Arena (GL)</tspan>
           </text>
+          <g id="CGS_3095" class="pulse">
+            <circle cx="915" cy="139" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--PHY2049/2049L-->
-          <rect id="PHY2049" data-cid="PHY 2049, PHY 2049L" value=5 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="250" rx="2"/>
+          <rect id="PHY2049" class="button" data-cid="PHY 2049, PHY 2049L" value=5 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="250" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="270" font-size="16" font-weight="bold">PHY2049/</tspan>
             <tspan x="180" y="286" font-size="16" font-weight="bold">2049L</tspan>
@@ -202,91 +231,130 @@
             <tspan x="180" y="316" font-style="italic">w/Calculus</tspan>
             <tspan x="180" y="331" font-size="12">(5 credits)</tspan>
           </text>
+          <g id="PHY_2049" class="pulse">
+            <circle cx="230" cy="259" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CDA 4101-->
-          <rect id="CDA4101" data-cid="CDA 4101" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="250" rx="2"/>
+          <rect id="CDA4101" class="button" data-cid="CDA 4101" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="250" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="326" y="279" font-size="16" font-weight="bold">CDA 4101</tspan>
             <tspan x="326" y="294" font-style="italic">Computer</tspan>
             <tspan x="326" y="309" font-style="italic">Organization</tspan>
           </text>
+          <g id="CDA_4101" class="pulse">
+            <circle cx="376" cy="259" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COT 3541-->
-          <rect id="COT3541" data-cid="COT 3541" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="250" rx="2"/>
+          <rect id="COT3541" class="button" data-cid="COT 3541" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="250" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="445" y="274" font-size="16" font-weight="bold">COT 3541</tspan>
             <tspan x="445" y="289" font-style="italic">Logic for</tspan>
             <tspan x="445" y="304" font-style="italic">Computer</tspan>
             <tspan x="445" y="319" font-style="italic">Science</tspan>
           </text>
+          <g id="COT_3541" class="pulse">
+            <circle cx="495" cy="259" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 3530-->
-          <rect id="COP3530" data-cid="COP 3530" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="250" rx="2"/>
+          <rect id="COP3530" class="button" data-cid="COP 3530" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="250" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="565" y="279" font-size="16" font-weight="bold">COP 3530</tspan>
             <tspan x="565" y="294" font-style="italic">Data</tspan>
             <tspan x="565" y="309" font-style="italic">Structures</tspan>
           </text>
+          <g id="COP_3530" class="pulse">
+            <circle cx="615" cy="259" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--STA 3033-->
-          <rect id="STA3033" data-cid="STA 3033" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="375" rx="2"/>
+          <rect id="STA3033" class="button" data-cid="STA 3033" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="0" y="375" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="60" y="405" font-size="16" font-weight="bold">STA 3033</tspan>
             <tspan x="60" y="420" font-style="italic">Probability</tspan>
             <tspan x="60" y="435" font-style="italic">& Statistics</tspan>
           </text>
+          <g id="STA_3033" class="pulse">
+            <circle cx="110" cy="384" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MAD 3512-->
-          <rect id="MAD3512" data-cid="MAD 3512" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="375" rx="2"/>
+          <rect id="MAD3512" class="button" data-cid="MAD 3512" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="385" y="375" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="445" y="420" font-size="16" font-weight="bold">MAD 3512</tspan>
             <tspan x="445" y="435" font-style="italic">Algorithms</tspan>
           </text>
+          <g id="MAD_3512" class="pulse">
+            <circle cx="495" cy="384" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4338-->
-          <rect id="COP4338" data-cid="COP 4338" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="375" rx="2"/>
+          <rect id="COP4338" class="button" data-cid="COP 4338" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="375" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="565" y="405" font-size="16" font-weight="bold">COP 4338</tspan>
             <tspan x="565" y="420" font-style="italic">Programming</tspan>
             <tspan x="565" y="435" font-style="italic">III</tspan>
           </text>
+          <g id="COP_4338" class="pulse">
+            <circle cx="615" cy="384" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4710-->
-          <rect id="COP4710" data-cid="COP 4710" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="625" y="375" rx="2"/>
+          <rect id="COP4710" class="button" data-cid="COP 4710" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="625" y="375" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="685" y="420" font-size="16" font-weight="bold">COP 4710</tspan>
             <tspan x="685" y="435" font-style="italic">Database</tspan>
           </text>
+          <g id="COP_4710" class="pulse">
+            <circle cx="735" cy="384" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4555-->
-          <rect id="COP4555" data-cid="COP 4555" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="745" y="375" rx="2"/>
+          <rect id="COP4555" class="button" data-cid="COP 4555" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="745" y="375" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="805" y="405" font-size="16" font-weight="bold">COP 4555</tspan>
             <tspan x="805" y="420" font-style="italic">Programming</tspan>
             <tspan x="805" y="435" font-style="italic">Languages</tspan>
           </text>
+          <g id="COP_4555" class="pulse">
+            <circle cx="855" cy="384" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4610-->
-          <rect id="COP4610" data-cid="COP 4610" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="500" rx="2"/>
+          <rect id="COP4610" class="button" data-cid="COP 4610" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="265" y="500" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="326" y="535" font-size="16" font-weight="bold">COP 4610</tspan>
             <tspan x="326" y="550" font-style="italic">Operating</tspan>
             <tspan x="326" y="565" font-style="italic">Systems</tspan>
           </text>
+          <g id="COP_4610" class="pulse">
+            <circle cx="376" cy="509" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CNT 4713-->
-          <rect id="CNT4713" data-cid="CNT 4713" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="500" rx="2"/>
+          <rect id="CNT4713" class="button" data-cid="CNT 4713" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="500" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="565" y="535" font-size="16" font-weight="bold">CNT 4713</tspan>
             <tspan x="565" y="550" font-style="italic">Net Centric</tspan>
             <tspan x="565" y="565" font-style="italic">Computing</tspan>
           </text>
+          <g id="CNT_4713" class="pulse">
+            <circle cx="615" cy="509" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CEN 4010-->
-          <rect id="CEN4010" data-cid="CEN 4010" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="500" rx="2"/>
+          <rect id="CEN4010" class="button" data-cid="CEN 4010" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="805" y="500" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="865" y="535" font-size="16" font-weight="bold">CEN 4010</tspan>
             <tspan x="865" y="550" font-style="italic">Software</tspan>
             <tspan x="865" y="565" font-style="italic">Engineering I</tspan>
           </text>
+          <g id="CEN_4010" class="pulse">
+            <circle cx="915" cy="509" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CIS 4911-->
-          <rect id="CIS4911" data-cid="CIS 4911" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="890" y="625" rx="2"/>
+          <rect id="CIS4911" class="button" data-cid="CIS 4911" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="890" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="950" y="665" font-size="16" font-weight="bold">CIS 4911</tspan>
             <tspan x="950" y="680" font-style="italic">Senior Project</tspan>
           </text>
+          <g id="CIS_4911" class="pulse">
+            <circle cx="1000" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--*********************** Elective Courses ***********************-->
         <!--CAP 4453-->
-          <rect id="CAP4453" data-cid="CAP 4453" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="625" rx="2"/>
+          <rect id="CAP4453" class="button" data-cid="CAP 4453" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="186" y="647" font-size="16" font-weight="bold">CAP 4453</tspan>
             <tspan x="186" y="662" font-size="12" font-style="italic">Robot</tspan>
@@ -294,8 +362,11 @@
             <tspan x="186" y="692" font-size="12" >Pre: COP3530 and</tspan>
             <tspan x="186" y="707" font-size="12" >MAC2312</tspan>
           </text>
+          <g id="CAP_4453" class="pulse">
+            <circle cx="236" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CAP 4710-->
-          <rect id="CAP4710" data-cid="CAP 4710" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="625" rx="2"/>
+          <rect id="CAP4710" class="button" data-cid="CAP 4710" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="306" y="647" font-size="16" font-weight="bold">CAP 4710</tspan>
             <tspan x="306" y="662" font-size="12" font-style="italic">Computer</tspan>
@@ -303,8 +374,11 @@
             <tspan x="306" y="692" font-size="12" >Pre: COP3337,</tspan>
             <tspan x="306" y="707" font-size="12" >MAC2312</tspan>
           </text>
+          <g id="CAP_4710" class="pulse">
+            <circle cx="356" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CAP 4770-->
-          <rect id="CAP4770" data-cid="CAP 4770" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="625" rx="2"/>
+          <rect id="CAP4770" class="button" data-cid="CAP 4770" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="426" y="647" font-size="16" font-weight="bold">CAP 4770</tspan>
             <tspan x="426" y="662" font-size="12" font-style="italic">Introduction to</tspan>
@@ -312,16 +386,22 @@
             <tspan x="426" y="692" font-size="12" >Pre: COP3530</tspan>
             <tspan x="426" y="707" font-size="12" >Co: COP4710</tspan>
           </text>
+          <g id="CAP_4770" class="pulse">
+            <circle cx="476" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CAP 4641-->
-          <rect id="CAP4641" data-cid="CAP 4641" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="625" rx="2"/>
+          <rect id="CAP4641" class="button" data-cid="CAP 4641" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="546" y="647" font-size="16" font-weight="bold">CAP 4641</tspan>
             <tspan x="546" y="662" font-size="12" font-style="italic">Natural Lang</tspan>
             <tspan x="546" y="677" font-size="12" font-style="italic">Processing</tspan>
             <tspan x="546" y="692" font-size="12" >Pre: COP3530</tspan>
           </text>
+          <g id="CAP_4641" class="pulse">
+            <circle cx="596" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CDA 4625-->
-          <rect id="CDA4625" data-cid="CDA 4625" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="625" rx="2"/>
+          <rect id="CDA4625" class="button" data-cid="CDA 4625" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="666" y="647" font-size="16" font-weight="bold">CDA 4625</tspan>
             <tspan x="666" y="662" font-size="12" font-style="italic">Intro to Mobile</tspan>
@@ -329,24 +409,33 @@
             <tspan x="666" y="692" font-size="12" >Pre: COP3530 and</tspan>
             <tspan x="666" y="707" font-size="12" >STA3033</tspan>
           </text>
+          <g id="CDA_4625" class="pulse">
+            <circle cx="716" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CEN 4021-->
-          <rect id="CEN4021" data-cid="CEN 4021" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="625" rx="2"/>
+          <rect id="CEN4021" class="button" data-cid="CEN 4021" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="625" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="786" y="647" font-size="16" font-weight="bold">CEN 4021</tspan>
             <tspan x="786" y="662" font-size="12" font-style="italic">Software</tspan>
             <tspan x="786" y="677" font-size="12" font-style="italic">Engineering II</tspan>
             <tspan x="786" y="692" font-size="12" >Pre: CEN4010</tspan>
           </text>
+          <g id="CEN_4021" class="pulse">
+            <circle cx="836" cy="634" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CEN 4072-->
-          <rect id="CEN4072" data-cid="CEN 4072" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="715" rx="2"/>
+          <rect id="CEN4072" class="button" data-cid="CEN 4072" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="186" y="737" font-size="16" font-weight="bold">CEN 4072</tspan>
             <tspan x="186" y="752" font-size="12" font-style="italic">Software</tspan>
             <tspan x="186" y="767" font-size="12" font-style="italic">Testing</tspan>
             <tspan x="186" y="782" font-size="12" >Pre: COP3530</tspan>
           </text>
+          <g id="CEN_4072" class="pulse">
+            <circle cx="236" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--CEN 4083-->
-          <rect id="CEN4083" data-cid="CEN 4083" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="715" rx="2"/>
+          <rect id="CEN4083" class="button" data-cid="CEN 4083" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="306" y="737" font-size="16" font-weight="bold">CEN 4083</tspan>
             <tspan x="306" y="752" font-size="12" font-style="italic">Cloud</tspan>
@@ -354,8 +443,11 @@
             <tspan x="306" y="782" font-size="12" >Pre: CNT4713,</tspan>
             <tspan x="306" y="797" font-size="12" >CDA4101</tspan>
           </text>
+          <g id="CEN_4083" class="pulse">
+            <circle cx="356" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4226-->
-          <rect id="COP4226" data-cid="COP 4226" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="715" rx="2"/>
+          <rect id="COP4226" class="button" data-cid="COP 4226" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="426" y="737" font-size="16" font-weight="bold">COP 4226</tspan>
             <tspan x="426" y="752" font-size="12" font-style="italic">Advanced</tspan>
@@ -363,8 +455,11 @@
             <tspan x="426" y="782" font-size="12" font-style="italic">Programming</tspan>
             <tspan x="426" y="797" font-size="12" >Pre: COP3530</tspan>
           </text>
+          <g id="COP_4226" class="pulse">
+            <circle cx="476" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4520-->
-          <rect id="COP4520" data-cid="COP 4520" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="715" rx="2"/>
+          <rect id="COP4520" class="button" data-cid="COP 4520" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="546" y="737" font-size="16" font-weight="bold">COP 4520</tspan>
             <tspan x="546" y="752" font-size="12" font-style="italic">Intro to Parallel</tspan>
@@ -372,16 +467,22 @@
             <tspan x="546" y="782" font-size="12">Pre: COP3530,</tspan>
             <tspan x="546" y="797" font-size="12" >CDA4101</tspan>
           </text>
+          <g id="COP_4520" class="pulse">
+            <circle cx="596" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4534-->
-          <rect id="COP4534" data-cid="COP 4534" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="715" rx="2"/>
+          <rect id="COP4534" class="button" data-cid="COP 4534" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="666" y="737" font-size="16" font-weight="bold">COP 4534</tspan>
             <tspan x="666" y="752" font-size="12" font-style="italic">Algorithm</tspan>
             <tspan x="666" y="767" font-size="12" font-style="italic">Techniques</tspan>
             <tspan x="666" y="782" font-size="12">Pre: COP3530</tspan>
           </text>
+          <g id="COP_4534" class="pulse">
+            <circle cx="716" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4604-->
-          <rect id="COP4604" data-cid="COP 4604" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="715" rx="2"/>
+          <rect id="COP4604" class="button" data-cid="COP 4604" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="715" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="786" y="737" font-size="16" font-weight="bold">COP 4604</tspan>
             <tspan x="786" y="752" font-size="12" font-style="italic">Advanced</tspan>
@@ -389,8 +490,11 @@
             <tspan x="786" y="782" font-size="12" font-style="italic">Programming</tspan>
             <tspan x="786" y="797" font-size="12">Pre: COP4610</tspan>
           </text>
+          <g id="COP_4604" class="pulse">
+            <circle cx="836" cy="724" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COP 4722-->
-          <rect id="COP4722" data-cid="COP 4722" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="805" rx="2"/>
+          <rect id="COP4722" class="button" data-cid="COP 4722" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="125" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="186" y="827" font-size="16" font-weight="bold">COP 4722</tspan>
             <tspan x="186" y="842" font-size="12" font-style="italic">Survey of</tspan>
@@ -398,8 +502,11 @@
             <tspan x="186" y="872" font-size="12" font-style="italic">Systems</tspan>
             <tspan x="186" y="887" font-size="12">Pre: COP4710</tspan>
           </text>
+          <g id="COP_4722" class="pulse">
+            <circle cx="236" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--COT 4521-->
-          <rect id="COT4521" data-cid="COT 4521" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="805" rx="2"/>
+          <rect id="COT4521" class="button" data-cid="COT 4521" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="245" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="306" y="827" font-size="16" font-weight="bold">COT 4521</tspan>
             <tspan x="306" y="842" font-size="12" font-style="italic">Intro to</tspan>
@@ -407,16 +514,22 @@
             <tspan x="306" y="872" font-size="12" font-style="italic">Geometry</tspan>
             <tspan x="306" y="887" font-size="12">Pre: COP3530</tspan>
           </text>
+          <g id="COT_4521" class="pulse">
+            <circle cx="356" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MAD 3305-->
-          <rect id="MAD3305" data-cid="MAD 3305" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="805" rx="2"/>
+          <rect id="MAD3305" class="button" data-cid="MAD 3305" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="365" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="426" y="827" font-size="16" font-weight="bold">MAD 3305</tspan>
             <tspan x="426" y="842" font-size="12" font-style="italic">Graph Theory</tspan>
             <tspan x="426" y="857" font-size="12">Pre: COP2210,</tspan>
             <tspan x="426" y="872" font-size="12">MAD2104</tspan>
           </text>
+          <g id="MAD_3305" class="pulse">
+            <circle cx="476" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MAD 3401-->
-          <rect id="MAD3401" data-cid="MAD 3401" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="805" rx="2"/>
+          <rect id="MAD3401" class="button" data-cid="MAD 3401" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="485" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="546" y="827" font-size="16" font-weight="bold">MAD 3401</tspan>
             <tspan x="546" y="842" font-size="12" font-style="italic">Numerical</tspan>
@@ -424,24 +537,33 @@
             <tspan x="546" y="872" font-size="12">Pre: COP2210,</tspan>
             <tspan x="546" y="887" font-size="12">MAD2312</tspan>
           </text>
+          <g id="MAD_3401" class="pulse">
+            <circle cx="596" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MAD 4203-->
-          <rect id="MAD4203" data-cid="MAD 4203" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="805" rx="2"/>
+          <rect id="MAD4203" class="button" data-cid="MAD 4203" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="605" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="666" y="827" font-size="16" font-weight="bold">MAD 4203</tspan>
             <tspan x="666" y="842" font-size="12" font-style="italic">Combinatorics</tspan>
             <tspan x="666" y="857" font-size="12">Pre: MAD2104,</tspan>
             <tspan x="666" y="872" font-size="12">MAC2312</tspan>
           </text>
+          <g id="MAD_4203" class="pulse">
+            <circle cx="716" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--MHF 4302-->
-          <rect id="MHF4302" data-cid="MHF 4302" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="805" rx="2"/>
+          <rect id="MHF4302" class="button" data-cid="MHF 4302" value=3 height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="725" y="805" rx="2"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="786" y="827" font-size="16" font-weight="bold">MHF 4302</tspan>
             <tspan x="786" y="842" font-size="12" font-style="italic">Math Logic</tspan>
             <tspan x="786" y="857" font-size="12">Pre: MAD3512</tspan>
           </text>
+          <g id="MHF_4302" class="pulse">
+            <circle cx="836" cy="814" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         <!--*********************** Natural Science Courses ***********************-->
         <!--Natural Science Elective 1-->
-          <rect id="drop1" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="5" rx="3"/>
+          <rect id="drop1" class="button" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="120" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="33" font-weight="bold">Natural</tspan>
             <tspan x="180" y="52" font-weight="bold">Science</tspan>
@@ -459,6 +581,9 @@
             <tspan x="180" y="179" font-style="italic">Gen Chemistry I</tspan>
             <tspan x="180" y="201" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="CHM_1045" class="pulse">
+            <circle cx="230" cy="128" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--CHM 1046-->
           <rect class="b1" id="CHM1046" data-block="CHM 1046, CHM 1046L" value=4 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="120" y="217" rx="3"/>
           <text id="svgText" text-anchor="middle">
@@ -467,27 +592,39 @@
             <tspan x="180" y="274" font-style="italic">Gen Chemistry II</tspan>
             <tspan x="180" y="296" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="CHM_1046" class="pulse">
+            <circle cx="230" cy="226" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--BSC 1010-->
           <rect class="b1" id="BSC1010" data-block="BSC 1010" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="120" y="315" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="353" font-size="16" font-weight="bold">BSC 1010</tspan>
             <tspan x="180" y="371" font-style="italic">Gen Biology I</tspan>
           </text>
+          <g id="BSC_1010" class="pulse">
+            <circle cx="230" cy="324" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--BSC 1011-->
           <rect class="b1" id="BSC1011" data-block="BSC 1011" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="120" y="413" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="451" font-size="16" font-weight="bold">BSC 1011</tspan>
             <tspan x="180" y="469" font-style="italic">Gen Biology II</tspan>
           </text>
+          <g id="BSC_1011" class="pulse">
+            <circle cx="230" cy="422" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--GLY 1010-->
           <rect class="b1" id="GLY1010" data-block="GLY 1010" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="120" y="511" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="180" y="549" font-size="16" font-weight="bold">GLY 1010</tspan>
             <tspan x="180" y="569" font-style="italic">Physical Geology</tspan>
           </text>
+          <g id="GLY_1010" class="pulse">
+            <circle cx="230" cy="520" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         </g>
         <!--Natural Science Elective 2-->
-          <rect id="drop2" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="240" y="5" rx="3"/>
+          <rect id="drop2" class="button" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="240" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="300" y="33" font-weight="bold">Natural</tspan>
             <tspan x="300" y="52" font-weight="bold">Science</tspan>
@@ -505,6 +642,9 @@
             <tspan x="300" y="179" font-style="italic">Gen Chemistry I</tspan>
             <tspan x="300" y="201" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="CHM_1045" class="pulse">
+            <circle cx="350" cy="128" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--CHM 1046-->
           <rect class="b2" id="CHM1046-2" data-block="CHM 1046, CHM 1046L" value=4 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="240" y="217" rx="3"/>
           <text id="svgText" text-anchor="middle">
@@ -513,28 +653,40 @@
             <tspan x="300" y="274" font-style="italic">Gen Chemistry II</tspan>
             <tspan x="300" y="296" font-size="12">(4 credits)</tspan>
           </text>
+          <g id="CHM_1046" class="pulse">
+            <circle cx="350" cy="226" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--BSC 1010-->
           <rect class="b2" id="BSC1010-2" data-block="BSC 1010" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="240" y="315" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="300" y="353" font-size="16" font-weight="bold">BSC 1010</tspan>
             <tspan x="300" y="371" font-style="italic">Gen Biology I</tspan>
           </text>
+          <g id="BSC_1010" class="pulse">
+            <circle cx="350" cy="324" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--BSC 1011-->
           <rect class="b2" id="BSC1011-2" data-block="BSC 1011" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="240" y="413" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="300" y="451" font-size="16" font-weight="bold">BSC 1011</tspan>
             <tspan x="300" y="469" font-style="italic">Gen Biology II</tspan>
           </text>
+          <g id="BSC_1011" class="pulse">
+            <circle cx="350" cy="422" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--GLY 1010-->
           <rect class="b2" id="GLY1010-2" data-block="GLY 1010" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="240" y="511" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="300" y="549" font-size="16" font-weight="bold">GLY 1010</tspan>
             <tspan x="300" y="569" font-style="italic">Physical Geology</tspan>
           </text>
+          <g id="GLY_1010" class="pulse">
+            <circle cx="350" cy="520" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         </g>
         <!--*********************** Discrete Courses ***********************-->
         <!--COT 3993 or MAD 2104-->
-          <rect id="drop3" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="5" rx="3"/>
+          <rect id="drop3" class="button" height="90" width="120" fill="white" stroke="#15325C" stroke-width="4" x="505" y="5" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="565" y="27" font-size="16" font-weight="bold">COT 3993</tspan>
             <tspan x="565" y="41" font-style="italic" font-size="12">Discrete</tspan>
@@ -552,81 +704,135 @@
             <tspan x="565" y="170" font-style="italic">Discrete</tspan>
             <tspan x="565" y="182" font-style="italic">Structures</tspan>
           </text>
+          <g id="COT_3993" class="pulse">
+            <circle cx="615" cy="128" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
           <!--MAD 2104-->
           <rect class="b3" id="MAD2104" data-block="MAD 2104" value=3 height="90" width="120" fill="white" stroke="#c5960c" stroke-width="4" x="505" y="217" rx="3"/>
           <text id="svgText" text-anchor="middle">
             <tspan x="565" y="253" font-size="16" font-weight="bold">MAD 2104</tspan>
             <tspan x="565" y="268" font-style="italic">Discrete Math</tspan>
           </text>
+          <g id="MAD_2104" class="pulse">
+            <circle cx="615" cy="226" r="3" fill="limegreen" stroke="limegreen" style="visibility: none">
+          </g>
         </g>
       </g>
   </svg>
 
-        <!-- Add icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <div class="icon-bar">
-            <a class="active" href="#" data-home="Home"><i class="fa fa-home"></i></a>
-            <a href="#" data-clear="Clear"><i class="fa fa-refresh"></i></a>
-            <a href="#" data-filters="Filter"><i class="fa fa-bars"></i></a>
-            <a href="#results_div" data-search="Search"><i class="fa fa-search"></i></a>
-        </div>
+  <div id="iconBar" class="icon-bar">
+    <a class="blue" data-clear="Clear"><i class="fa fa-refresh"></i></a>
+    <a class="blue" data-menu="Menu"><i class="fa fa-bars"></i></a>
+    <a class="gold" data-search="Search"><i class="fa fa-search"></i></a>
+  </div>
 
-        <div id="mySidenav" class="sidenav">
-            <div class="cd-filter-block">
-                <h4><a href="#">Days</a></h4>
-                <ul class="cd-filter-content cd-filters list">
-                    <li>
-                        <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                        <label class="checkbox-label" for="checkbox1">Option 1</label>
-                    </li>
-                    <li>
-                        <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                        <label class="checkbox-label" for="checkbox2">Option 2</label>
-                    </li>
-                    <li>
-                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                        <label class="checkbox-label" for="checkbox3">Option 3</label>
-                    </li>
-                </ul>
-                <!-- cd-filter-content -->
-            </div>
-            <!-- cd-filter-block -->
-            <a href="#">Times</a>
-            <!-- check boxes -->
-            <a href="#">Location</a>
-            <!-- select -->
-            <a href="#">Session</a>
-            <!-- select -->
-            <a href="#">Instructor</a>
-            <!-- typed -->
-        </div>
+  <div id="sideMenu" class="sideMenu" style="visibility: hidden; ">
 
-
+    <a href="javascript:void(0)" class="closebtn" data-menu="Menu">&times;</a>
+    <div class="filter-block">
+      <h1 data-collapse="Collapse" data-flow=""><a>Days</a></h1>
+      <ul class="filter-content">
+        <li>
+          <input id="Mo" data-day="Mo" type="checkbox">
+          <label for="Mo">Monday</label>
+        </li>
+        <li>
+          <input id="Tu" data-day="Tu" type="checkbox">
+          <label for="Tu">Tuesday</label>
+        </li>
+        <li>
+          <input id="We" data-day="We" type="checkbox">
+          <label for="We">Wednesday</label>
+        </li>
+        <li>
+          <input id="Th" data-day="Th" type="checkbox">
+          <label for="Th">Thursday</label>
+        </li>
+        <li>
+          <input id="Fr" data-day="Fr" type="checkbox">
+          <label for="Fr">Friday</label>
+        </li>
+        <li>
+          <input id="Sa" data-day="Sa" type="checkbox">
+          <label for="Sa">Saturday</label>
+        </li>
+        <li>
+          <input id="Su" data-day="Su" type="checkbox">
+          <label for="Su">Sunday</label>
+        </li>
+      </ul>
     </div>
-
-
-    <div id="results_div" class="container-fluid">
-        <center><a href="homepage.html#flowchart_div" class="fiu_button" id='back_to_search'>Back to search</a></center>
-        <div id="courses_div" class="container-fluid">
-
-        </div>
+    <div class="filter-block">
+      <h1 data-collapse="Collapse" data-flow=""><a>Times</a></h1>
+      <ul class="filter-content">
+        <li>
+          <input id="morning" data-time="morning" type="checkbox">
+          <label for="morning">Morning</label>
+        </li>
+        <li>
+          <input id="afternoon" data-time="afternoon" type="checkbox">
+          <label for="afternoon">Afternoon</label>
+        </li>
+        <li>
+          <input id="evening" data-time="evening" type="checkbox">
+          <label for="evening">Evening</label>
+        </li>
+        <li>
+          <input id="night" data-time="night" type="checkbox">
+          <label for="night">Night</label>
+        </li>
+      </ul>
     </div>
+    <div class="filter-block">
+      <h1 data-collapse="Collapse" data-flow=""><a>Location</a></h1>
+      <div align = "center" class="filter-content">
+        <select id="location" class="selectpicker">
+          <option value="0">Select a location</option>
+          <option value="1">Modesto A. Maidique Campus</option>
+          <option value="2">Biscayne Bay Campus</option>
+          <option value="3">Engineering Center</option>
+          <option value="4">FIU Off Campus Regional Sites</option>
+          <option value="5">FIU On-line</option>
+          <option value="6">FIU at I-75</option>
+          <option value="7">International Sites</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-block">
+      <h1 data-collapse="Collapse" data-flow=""><a>Session</a></h1>
+      <div align = "center" class="filter-content">
+        <select id="session" class="selectpicker">
+          <option value="0">Select a session</option>
+          <option value="1">Dynamic Session - Mini</option>
+          <option value="2">Mini</option>
+          <option value="3">Regular Academic Session</option>
+          <option value="4">Summer A</option>
+          <option value="5">Summer B</option>
+          <option value="6">Summer C</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-block">
+      <h1 data-collapse="Collapse" data-flow=""><a>Instructor</a></h1>
+      <div align = "center" class="filter-content">
+        <input id="instructor" type="text" value="">
+      </div>
+    </div>
+  </div>
+</div>
 
-    <style>
-        /* CSS for icon-bar */
+<script src="bower_components/elasticsearch/elasticsearch.js"></script>
+<script src="JS/search.js"></script>
 
-        @import "CSS/iconBar.css";
-        /* CSS for sidenav (filters) */
+<div id="results_div" class="container-fluid" style="display: none;">
+  <br>
+  <div id="courses_div" class="container-fluid">
 
-        @import "CSS/sidenav.css";
-@import "CSS/courseButtons.css";
+  </div>
+</div>
 
-        @import "CSS/courses.css";
-    </style>
-
-    <script src="bower_components\elasticsearch\elasticsearch.js"></script>
-    <script src="search.js"></script>
-
-
+</body>
 </html>
