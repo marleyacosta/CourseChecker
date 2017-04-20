@@ -1,5 +1,5 @@
 #results_div{
-  background: #F7F7F7;
+  background: #15325C;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -13,8 +13,8 @@ table {
 
 .course_name_th {
   color:white;
-  background: #7382b5;
-  border-color: #7382b5;
+  background: #c5960c;
+  border-color: #c5960c;
 }
 
 th {
@@ -29,4 +29,7 @@ th {
 td {
   background:white;
   padding: 1%;
+}
+.num_sections{
+  color:white;
 }

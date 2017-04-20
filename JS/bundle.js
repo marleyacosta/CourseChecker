@@ -8,7 +8,7 @@ client.search({index: term, body: queryBuilder()
 }).then(function (resp) {
     var hits = resp.hits.hits;
 
-    var total_found = "<center><h4>" + hits.length + " class section(s) found</h4></center>";
+    var total_found = "<center><h4 class = 'num_sections' >" + hits.length + " class section(s) found</h4></center>";
     var course_div = '';
     for (course_id in hits) {
       course_name = hits[course_id]._source.courseInfo
